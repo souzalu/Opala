@@ -10,35 +10,30 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
+    Route::get('/', function () {
+        return view('welcome');
+    });
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+/* rota empresa */
+
+Route::get('/home', 'HomeController@home')->name('home');
+
+/* rota produto */
+
+Route::get('/produto', 'ProdutoController@produto')->name('produto');
+Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
 
 
+/* rota cadastro */
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
+Route::get('/login', 'UserController@login')->name('login');
 
-Route::get('/produto', function () {
-    return view('produto');
-});
+/* rota carrinho */
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
+Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
 
-Route::get('/produtodetalhe', function () {
-    return view('produtodetalhe');
-});
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/pagamento', function () {
-    return view('pagamento');
-});

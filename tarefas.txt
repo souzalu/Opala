@@ -1,0 +1,8 @@
+
+HTML em Blade - ok
+Rotas criadas - ok
+Controller criados - ok
+Models criados - ok
+Tabelas de relação entre model - ok
+Diagrama - DER - ok
+
