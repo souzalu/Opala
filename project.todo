@@ -1,0 +1,13 @@
+Model
+user + controller do proprio laravel
+pedido + controller
+produto + controller
+categoria usa controller do produto
+imagem
+
+
+
+tabelas
+
+pedido_produto usa o controller do produto
+favoritos usa o controller do produto
