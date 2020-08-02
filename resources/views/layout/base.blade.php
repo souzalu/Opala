@@ -25,6 +25,7 @@
     <div class="container">
         <div class="row justify-content-between mt-3">
             <div class="col align-self-center">
+
                 <a href="#">
                     <img src="https://img.icons8.com/office/25/000000/whatsapp.png" />
                 </a>
@@ -33,17 +34,17 @@
                 </a>
             </div>
             <div class="col text-center">
-                <a href="#">
+                <a href="{{route('home')}}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" />
                 </a>
                 <div class="login">Opala Acessórios</div>
             </div>
 
             <div class="col text-right align-self-center">
-                <a href="#">
+                <a href="{{route('login')}}">
                     <img src="https://img.icons8.com/windows/32/000000/user.png" />
                 </a>
-                <a href="#">
+                <a href="{{route('pagamento')}}">
                     <img src="https://img.icons8.com/windows/32/000000/shopping-cart.png" />
                 </a>
             </div>
@@ -62,18 +63,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active mr-4">
-                        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-4">
-                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link text-white dropdown-toggle" href="{{route('produto')}}" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Produtos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Pulseiras</a>
-                            <a class="dropdown-item" href="#">Brincos</a>
-                            <a class="dropdown-item" href="#">Colares</a>
-                            <a class="dropdown-item" href="#">Anéis</a>
+                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Pulseiras</a>
+                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Brincos</a>
+                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Colares</a>
+                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Anéis</a>
                         </div>
                     </li>
                     <li class="nav-item mr-4">
@@ -179,3 +180,4 @@
 </body>
 
 </html>
+{{-- <!-- <a href="<https://api.whatsapp.com/send?phone=+5511964116559">"{{route('zap')}}"--> --}}

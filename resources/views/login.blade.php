@@ -6,7 +6,7 @@
         <aside class="col-sm-4">
             <div class="card mt-4 mb-5">
                 <article class="card-body">
-                    <a href="#" class="float-right btn btn-outline-dark">Cadastrar</a>
+                    <a href="{{route('cadastro')}}" class="float-right btn btn-outline-dark">Cadastrar</a>
                     <h4 class="card-title mb-4 mt-1">Entrar</h4>
                     <form>
                         <div class="form-group">
@@ -37,5 +37,5 @@
             </div>
         </aside>
     </div>
-    
+
 @endsection

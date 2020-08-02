@@ -7,9 +7,9 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb" style="background-color: white;">
-                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="produto.php">Produto</a></li>
-                    <li class="breadcrumb-item"><a href="detalhepd.php">Detalhes Produto</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('produto')}}">Produto</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('produto_detalhe')}}">Detalhes Produto</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Pagamento</li>
                 </ol>
             </nav>
@@ -141,7 +141,7 @@
                                 </form>
                             </div>
                             <div class="col">
-                                <a href="#" class="btn btn-secondary mt-4"><i class="fa fa-angle-left"></i> Continuar
+                                <a href="{{route('home')}}" class="btn btn-secondary mt-4"><i class="fa fa-angle-left"></i> Continuar
                                     Comprando</a>
                             </div>
                         </div>
