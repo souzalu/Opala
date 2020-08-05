@@ -15,6 +15,9 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->float('valor');
+            $table->float('soma');
+
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

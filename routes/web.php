@@ -36,4 +36,4 @@ Route::get('/login', 'UserController@login')->name('login');
 
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
 
-/*Route::redirect('http://127.0.0.1:8000', 'https://api.whatsapp.com/send?phone=+5511964116559', 301)->nome('zap');
+
