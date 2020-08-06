@@ -17,7 +17,6 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->float('valor');
             $table->float('soma');
-
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
