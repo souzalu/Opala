@@ -6,3 +6,49 @@ Models criados - ok
 Tabelas de relação entre model - ok
 Diagrama - DER - ok
 
+Gabriel Gomes de Oliveira Brunetti17:32
+@yield('nomeDaSecao')
+@yield('principal')
+Gabriel Gomes de Oliveira Brunetti17:35
+<div class=carousel active)
+<div class="carousel active">
+<div class="carousel @yield('activeCarousel')">
+Gabriel Gomes de Oliveira Brunetti17:37
+@extends ('layout.base')
+@section('activeCarousel')
+active
+Gabriel Gomes de Oliveira Brunetti17:38
+@section('principal')
+Gabriel Gomes de Oliveira Brunetti17:44
+@csrf
+Gabriel Gomes de Oliveira Brunetti17:48
+<form action="/produtos/">
+Gabriel Gomes de Oliveira Brunetti17:55
+store
+Gabriel Gomes de Oliveira Brunetti18:22
+$input = $request->all();
+https://laravel.com/docs/7.x/requests#retrieving-input
+Gabriel Gomes de Oliveira Brunetti18:49
+validação
+https://laravel.com/docs/7.x/validation
+Gabriel Gomes de Oliveira Brunetti18:51
+https://laravel.com/docs/7.x/eloquent
+https://laravel.com/docs/7.x/queries
+$produtos = Produto::all()
+Gabriel Gomes de Oliveira Brunetti18:53
+public function index() {
+$produtos = Produto::all()
+return view ('index', compact('produtos')
+}
+Gabriel Gomes de Oliveira Brunetti18:54
+view index.blade.php
+acessar a $produtos
+https://laravel.com/docs/7.x/blade
+@foreach ($produtos as $produto)
+
+@foreach
+Gabriel Gomes de Oliveira Brunetti18:56
+@foreach ($produtos as $produto)
+<h1>$produto->nome</h1>
+<p>$produto->preco</p>
+@endforeach

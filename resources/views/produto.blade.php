@@ -1,4 +1,7 @@
 @extends('layout.base')
+@section('activeProd')
+    active
+@endsection
 
 @section('principal')
 

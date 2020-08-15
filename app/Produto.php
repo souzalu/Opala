@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
     // adicionando relacionamento de 1:n com Categoria
-    public function categoria()
+    public function categorias()
     {
         return $this->belongsTo('App\Categoria');
     }

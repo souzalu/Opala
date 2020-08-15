@@ -1,5 +1,6 @@
 @extends('layout.base')
 
+
 @section('principal')
 
     <div class="container">

@@ -66,7 +66,7 @@
                         <a class="nav-link text-white" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-4">
-                        <a class="nav-link text-white dropdown-toggle" href="{{route('produto')}}" id="navbarDropdown" role="button"
+                        <a class="nav-link text-white dropdown-toggle" class="@yield('activeprod')" href="{{route('produto')}}" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Produtos
                         </a>
@@ -77,11 +77,11 @@
                             <a class="dropdown-item" href="{{route('produto_detalhe')}}">Anéis</a>
                         </div>
                     </li>
-                    <li class="nav-item mr-4">
-                        <a class="nav-link text-white" href="#">Sobre</a>
+                    <li class="nav-item mr-4" >
+                        <a class="nav-link text-white" class="@yield('activeSob')" href="#">Sobre</a>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-white" href="#">Contato</a>
+                        <a class="nav-link text-white" class="@yield('activeCont')" href="#">Contato</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

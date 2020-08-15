@@ -23,8 +23,14 @@ Route::get('/home', 'HomeController@home')->name('home');
 
 /* rota produto */
 
-Route::get('/produto', 'ProdutoController@produto')->name('produto');
-Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
+Route::get('produto', 'ProdutoController@produto')->name('produto');
+Route::get('produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
+Route::get('create', 'ProdutoController@create')->name('create');
+//Route::get('createCategorias', 'ProdutoController@createCategorias')->name('categorias');
+Route::get('edit', 'ProdutoController@edit')->name('edit');
+
+Route::post('produto','ProdutoController@store')->name('store');
+//Route::post('produto','ProdutoController@storeCategorias')->name('storeCategorias');
 
 
 /* rota cadastro */
