@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
+    protected $fillable = ['nome', 'valor','descrição','estoque','categoria','caminhoDaImagem'];
+
+
+    //formatando numeros para ficar com formato de real com ponto e virgula R$ 1.125,22
+    public function getValorAttribute($value)
+    {
+        return 'R$' . number_format($value, 2, ',', '.');
+    }
+
     // adicionando relacionamento de 1:n com Categoria
     public function categorias()
     {

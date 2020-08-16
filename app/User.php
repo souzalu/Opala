@@ -10,6 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+// adicionando relacionamento de 1:n com Pedido
+    public function pedidos()
+    {
+        return $this->hasMany('App\Pedido');
+    }
+
+
+
     /**
      * The attributes that are mass assignable.
      *

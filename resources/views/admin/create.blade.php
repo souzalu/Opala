@@ -58,20 +58,27 @@
                     <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3"
                         value=""></textarea>
                 </div>
+            </div>
 
-                <div class="form-group col-md-6 offset-md-3" class="custom-file">
-                    <input type="file" name="caminhoDaImagem" class="custom-file-input mt-2 mb-5" id="validatedCustomFile">
-                    <label class="custom-file-label" for="validatedCustomFile">Escolher arquivo...</label>
-                    <div class="invalid-feedback">Exemplo de feedback inválido para input file</div>
+            <div class="form-group text-center " >
+                <div class=" col-md-6 offset-md-3 ">
+                    <label for="exampleFormControlFile1">Inserir uma imagem do produto</label>
+                    <input type="file" name="imagem" class="form-control-file" id="imagem" >
                 </div>
             </div>
 
             <div class="form-row justify-content-center">
-                <div class="col-md-4">
-                    <a class="btn btn-dark btn-lg btn-block" href="{{route('store')}}" type="submit">Cadastrar Produto</a>
+                <div class="col-md-4 mt-2">
+                    <a class="btn btn-dark btn-lg btn-block" href="{{ route('create') }}" type="submit">Cadastrar Produto</a>
                 </div>
             </div>
+
         </form>
+
+
+
+
+
     </div>
 
 
