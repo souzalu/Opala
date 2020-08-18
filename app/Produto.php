@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    protected $fillable = ['nome', 'valor','descrição','estoque','categoria','caminhoDaImagem'];
+    protected $fillable = ['nome', 'valor','descrição','estoque','categoria_id'];
+
 
 
     //formatando numeros para ficar com formato de real com ponto e virgula R$ 1.125,22

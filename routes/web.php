@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     });
 
 
-Auth::routes();
+
 
 /* rota empresa */
 
@@ -30,7 +30,6 @@ Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalh
 Route::get('/create', 'ProdutoController@create')->name('create');
 Route::get('/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
 Route::get('/edit', 'ProdutoController@edit')->name('edit');
-Route::get('/produtos/imagens/{imagem}','ProdutoController@image')->name('imagem');
 
 
 
@@ -46,5 +45,6 @@ Route::get('/login', 'UserController@login')->name('login');
 /* rota carrinho */
 
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
+
 
 

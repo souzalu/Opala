@@ -12,13 +12,13 @@ class ProdutoController extends Controller
 {
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
 
-    }
+    // }
 
-    public function image($caminhoDaImagem)
+    public function imagem($caminhoDaImagem)
     {
         $caminho = "produtos_img/$caminhoDaImagem";
         $arquivo = Storage::get($caminho); //binário do arquivo
@@ -40,27 +40,32 @@ class ProdutoController extends Controller
 
     public function store(Request $request)
     {
-        if ($request->hasFile('imagem')&& $request->imagem->isValid()){
-           $caminhoDaImagem = $request->imagem->store('produtos_img');
+        if ($request->hasFile('imagem') && $request->imagem->isValid()) {
+            $caminhoDaImagem = $request->imagem->store('produtos_img');
+            $imagemProduto = new ImagemProduto;
+            $imagemProduto->caminhoDaImagem = $caminhoDaImagem;
         }
 
-            $produto = new Produto($request->all());
+        $produto = new Produto($request->all());
 
-            $produto->caminhoDaImagem=$caminhoDaImagem;
 
-            if($produto->save()){
-                return redirect()->back();
-            }
+
+        if ($produto->save()&& isset($imagemProduto)) {
+            $imagemProduto->produto_id = $produto->id;
+            $imagemProduto->save();
 
             return redirect()->back();
+            //dd($produto, $imagemProduto);
+        }
 
-
+        return redirect()->back();
     }
 
     public function edit()
     {
+        $produtos = Produto::all();
 
-        return view('admin.edit');
+        return view('admin.edit', compact('produtos'));
     }
 
     public function createCategorias()
@@ -69,30 +74,27 @@ class ProdutoController extends Controller
         return view('admin.createCategorias');
     }
 
-    public function storeCategorias(){
+    public function storeCategorias()
+    {
 
-             $categorias = new Categoria;
-             $categorias->nome = request('categoria');
-             $categorias->save();
+        $categorias = new Categoria;
+        $categorias->nome = request('categoria');
+        $categorias->save();
 
-             dd($categorias);
+        dd($categorias);
+    }
 
+    public function produto()
+    {
 
+        return view('produto');
+    }
 
-         }
+    public function produtodetalhe()
+    {
 
-         public function produto()
-         {
-
-             return view('produto');
-         }
-
-         public function produtodetalhe()
-         {
-
-             return view('produtodetalhe');
-         }
-
+        return view('produtodetalhe');
+    }
 }
 
 
