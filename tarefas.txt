@@ -52,3 +52,8 @@ Gabriel Gomes de Oliveira Brunetti18:56
 <h1>$produto->nome</h1>
 <p>$produto->preco</p>
 @endforeach
+
+
+php artisan tinker
+Psy Shell v0.10.4 (PHP 7.4.6 — cli) by Justin Hileman
+>>> $pedido = App\pedido::find(10)

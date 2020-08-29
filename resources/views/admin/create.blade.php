@@ -6,30 +6,30 @@
 
     <div class="container mt-5 mb-5">
         <h1 class="text-center mb-4">Cadastrar Produtos</h1>
-        <form method="post" action="/produto" enctype="multipart/form-data">
-            {{-- @crsf --}}
+        <form method="post" action="/produto/store" enctype="multipart/form-data">
+            {{-- @crsf  --}}
             @method('post')
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-row text-center">
                 <div class="form-group col-md-6 offset-md-3">
-                    <label for="nomeProduto">Nome do Produto </label>
-                    <input type="text" name="nomeProduto" class="form-control" id="nomeProduto" value="" required>
+                    <label for="nome">Nome do Produto </label>
+                    <input type="text" name="nome" class="form-control" id="nome" value="" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-3">
-                    <label for="valorProduto">Valor do produto</label>
-                    <input type="float" name="valor_unitario" class="form-control" id="valor_unitario" value="" required>
+                    <label for="valor">Valor do produto</label>
+                    <input type="float" name="valor" class="form-control" id="valor" value="" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-0">
-                    <label for="estoqueProduto">Estoque disponível</label>
+                    <label for="estoque">Estoque disponível</label>
                     <input type="text" name="estoque" class="form-control" id="estoque" value="" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-3">
-                    <label for="exampleFormControlSelect1">Categoria</label>
-                    <select class="form-control" id="categoria" name="categoria">
+                    <label for="categoria_id">Categoria</label>
+                    <select class="form-control" id="categoria_id" name="categoria_id">
                         <option>Selecione</option>
                         @foreach ($categorias as $c)
 
@@ -40,8 +40,8 @@
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-0">
-                    <label for="exampleFormControlSelect1">Tamanho</label>
-                    <select class="form-control" id="exampleFormControlSelect1 ">
+                    <label for="tamanho">Tamanho</label>
+                    <select class="form-control" name="tamanho" id="tamanho">
                         <option>Selecione</option>
                         <option>14</option>
                         <option>15</option>
@@ -54,24 +54,31 @@
                 </div>
 
                 <div class="form-group col-md-6 offset-md-3">
-                    <label for="descricaoProduto">Descrição</label>
-                    <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3"
+                    <label for="descrição">Descrição</label>
+                    <textarea class="form-control" name="descrição" id="descrição" rows="3"
                         value=""></textarea>
                 </div>
+            </div>
 
-                <div class="form-group col-md-6 offset-md-3" class="custom-file">
-                    <input type="file" name="caminhoDaImagem" class="custom-file-input mt-2 mb-5" id="validatedCustomFile">
-                    <label class="custom-file-label" for="validatedCustomFile">Escolher arquivo...</label>
-                    <div class="invalid-feedback">Exemplo de feedback inválido para input file</div>
+            <div class="form-group text-center " >
+                <div class=" col-md-6 offset-md-3 ">
+                    <label for="imagem">Inserir uma imagem do produto</label>
+                    <input type="file" name="imagem" class="form-control-file" id="imagem" >
                 </div>
             </div>
 
             <div class="form-row justify-content-center">
-                <div class="col-md-4">
-                    <a class="btn btn-dark btn-lg btn-block" href="{{route('store')}}" type="submit">Cadastrar Produto</a>
+                <div class="col-md-4 mt-2">
+                    <button class="btn btn-dark btn-lg btn-block" href="{{ route('create') }}" type="submit">Cadastrar Produto</button>
                 </div>
             </div>
+
         </form>
+
+
+
+
+
     </div>
 
 

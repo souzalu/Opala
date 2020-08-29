@@ -13,7 +13,13 @@ class PedidosProdutos extends Migration
      */
     public function up()
     {
-        //
+        //Criando a tabela
+        Schema::create('pedidos_produtos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('pedido_id')->constrained();
+            $table->foreignId('produto_id')->constrained();
+            $table->timestamps();
+        });
     }
 
     /**
