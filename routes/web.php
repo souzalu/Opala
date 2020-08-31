@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,34 +17,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// rotas dos produtos
+Route::get('admin/produtos/create', 'ProdutoController@create')->name('create');
+Route::get('admin/produtos/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
+Route::get('/admin/produtos/show', 'ProdutoController@show')->name('show'); //mostra todos os produtos cadastrados
+Route::get('/produtos/imagens/{imagem}', 'ProdutoController@image');
 
-/* rota empresa */
-
-Route::get('/home', 'HomeController@home')->name('home');
-
-/* rota produto */
-
-Route::get('/produto', 'ProdutoController@produto')->name('produto');
-Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
-Route::get('/create', 'ProdutoController@create')->name('create');
-Route::get('/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
-Route::get('/edit', 'ProdutoController@edit')->name('edit');
-
-
-
-Route::post('/produto/store','ProdutoController@store')->name('store');
-Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');
+Route::post('/produto/store','ProdutoController@store')->name('store');//salva os produtos no banco
+Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');//salva os produtos no banco
 
 
 
 
-/* rota cadastro */
-
+//rotas do site
+Route::get('/site', 'HomeController@home')->name('site');
 Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
 Route::get('/login', 'UserController@login')->name('login');
-
-/* rota carrinho */
-
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
+Route::get('/produto', 'ProdutoController@produto')->name('produto');
+Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
 
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 

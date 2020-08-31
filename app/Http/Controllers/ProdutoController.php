@@ -3,75 +3,80 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\Storage;
 use App\Produto;
 use App\Categoria;
-use App\ImagemProduto;
 
 class ProdutoController extends Controller
 {
 
-
+//só pode ver a imagem quem estiver logado no sistema
     // public function __construct()
     // {
     //     $this->middleware('auth');
 
     // }
 
-    public function imagem($caminhoDaImagem)
-    {
-        $caminho = "produtos_img/$caminhoDaImagem";
-        $arquivo = Storage::get($caminho); //binário do arquivo
-        $type = Storage::mimeType($caminho); // tipo de imagem jpeg, png
+     public function image($imagem)
+     {
+        $caminho = "Cimagem/imagem"; // buscar imagem onde foi salvo
+        $arquivo = Storage::get($caminho);
+        $type = Storage::mimeType($caminho);//tipo de arquivo ex: png, ou seja, qual formato
 
-        //indicamos ao navegador uma resposta do tipo do arquivo com o status 200
+        return response($arquivo, 200)->header('Content-Type', $type);//indicando para o navegador uma resposta do tipo do arquivo com o status 200
+     }
 
-        return response($arquivo, 200)
-            ->header('Content-Type', $type);
-    }
 
     public function create()
     {
         $categorias = Categoria::all();
 
-        return view('admin.create', compact('categorias'));
+        return view('admin.produtos.create', compact('categorias'));
     }
 
 
     public function store(Request $request)
     {
+
+
         if ($request->hasFile('imagem') && $request->imagem->isValid()) {
-            $caminhoDaImagem = $request->imagem->store('produtos_img');
-            $imagemProduto = new ImagemProduto;
-            $imagemProduto->caminhoDaImagem = $caminhoDaImagem;
+            $url = $request->imagem->store('Cimagem');
+
+            // $imagemProduto = new ImagemProduto;
+            // $imagemProduto->caminhoDaImagem = $caminhoDaImagem;
         }
 
         $produto = new Produto($request->all());
+        $produto ->url_img=$url;
+        if($produto->save()){
 
-
-
-        if ($produto->save()&& isset($imagemProduto)) {
-            $imagemProduto->produto_id = $produto->id;
-            $imagemProduto->save();
-
-            return redirect()->back();
-            //dd($produto, $imagemProduto);
+            return redirect('admin/produtos/show');
         }
-
         return redirect()->back();
-    }
 
-    public function edit()
+    }
+        // if ($produto->save()&& isset($imagemProduto)) {
+        //     $imagemProduto->produto_id = $produto->id;
+        //     $imagemProduto->save();
+
+        //     return redirect()->back();
+        //     //dd($produto, $imagemProduto);
+        // }
+
+        // return redirect()->back();
+
+
+    public function show()
     {
-        $produtos = Produto::all();
+        // $produtos = Produto::all();
 
-        return view('admin.edit', compact('produtos'));
+        return view('admin.produtos.show')->with('produtos', Produto::all());
     }
-
+    // compact('produtos'));
     public function createCategorias()
     {
 
-        return view('admin.createCategorias');
+        return view('admin.produtos.createCategorias');
     }
 
     public function storeCategorias()
@@ -83,6 +88,24 @@ class ProdutoController extends Controller
 
         dd($categorias);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function produto()
     {

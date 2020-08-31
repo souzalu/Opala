@@ -6,7 +6,7 @@
 
     <div class="container mt-5 mb-5">
         <h1 class="text-center mb-4">Cadastrar Produtos</h1>
-        <form method="post" action="/produto/store" enctype="multipart/form-data">
+        <form method="POST" action="/produto/store" enctype="multipart/form-data">
             {{-- @crsf  --}}
             @method('post')
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

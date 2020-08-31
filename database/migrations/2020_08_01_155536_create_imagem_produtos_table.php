@@ -13,12 +13,12 @@ class CreateImagemProdutosTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagem_produtos', function (Blueprint $table) {
-            $table->id();
-            $table->string('caminhoDaImagem');
-            $table->foreignId('produto_id')->constrained();
-            $table->timestamps();
-        });
+        // Schema::create('imagem_produtos', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('caminhoDaImagem');
+        //     $table->foreignId('produto_id')->constrained();
+        //     $table->timestamps();
+        // });
     }
 
     /**

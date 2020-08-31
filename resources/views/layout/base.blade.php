@@ -34,14 +34,14 @@
                 </a>
             </div>
             <div class="col text-center">
-                <a href="{{route('home')}}">
+                <a href="{{route('site')}}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" />
                 </a>
                 <div class="login">Opala Acessórios</div>
             </div>
 
             <div class="col text-right align-self-center">
-                <a href="{{route('login')}}">
+                <a href="{{route('site')}}">
                     <img src="https://img.icons8.com/windows/32/000000/user.png" />
                 </a>
                 <a href="{{route('pagamento')}}">
@@ -63,7 +63,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active mr-4">
-                        <a class="nav-link text-white" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="{{route('site')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-4">
                         <a class="nav-link text-white dropdown-toggle" class="@yield('activeprod')" href="{{route('produto')}}" id="navbarDropdown" role="button"

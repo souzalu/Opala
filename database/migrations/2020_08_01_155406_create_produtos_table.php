@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->decimal('valor', 5,2);
             $table->longText('descrição')->nullable();
             $table->float('estoque');
+            $table->string('url_img');
             $table->foreignId('categoria_id')->constrained('categorias');
             $table->timestamps();
         });
