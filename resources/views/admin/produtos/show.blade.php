@@ -47,7 +47,7 @@
 
                         <td>
 
-                            <img src="/imagens/{{($produto->url_img)}}" alt="">
+                            <img src="{{url("storage/{$produto->url_img}")}}" alt="{{$produto->nome}}" style="max-width:100px;">
                         </td>
                         <td>{{ $produto->nome }}</td>
                         <td>{{ $produto->valor }}</td>
@@ -55,7 +55,7 @@
                         <td>{{ $produto->categoria_id }}</td>
                         <td>{{ $produto->descrição }}</td>
                         <td>
-                            <a href="admin/produtos/edit/{{($produto->id)}}">
+                            <a href="edit/{{($produto->id)}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
 

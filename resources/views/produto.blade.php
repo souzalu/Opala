@@ -200,7 +200,7 @@
                         </a>
                         <div class="titulo">
                             <h5>
-                                <a href="#" class="text-dark">Anel Cavera Prateado</a>
+                                <a href="#" class="text-dark">Anel Caveira Prateado</a>
                             </h5>
                             <div class="lista-preço">
                                 <h6>

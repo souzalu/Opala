@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('admin/produtos/create', 'ProdutoController@create')->name('create');
 Route::get('admin/produtos/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
 Route::get('/admin/produtos/show', 'ProdutoController@index')->name('index'); //mostra todos os produtos cadastrados
-Route::get('/produtos/imagens/{imagem}', 'ProdutoController@image');
+Route::get('/storage/Cimagem/{imagem}', 'ProdutoController@image');
 Route::get('/admin/produtos/edit{id}', 'ProdutoController@edit')->name('edit');
 Route::get('/admin/produtos/{id}','ProdutoController@show');
 
