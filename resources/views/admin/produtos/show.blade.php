@@ -47,7 +47,7 @@
 
                         <td>
 
-                            <img src="/produtos/imagens/{{$produto->url_img}}" alt="">
+                            <img src="/imagens/{{($produto->url_img)}}" alt="">
                         </td>
                         <td>{{ $produto->nome }}</td>
                         <td>{{ $produto->valor }}</td>
@@ -55,7 +55,7 @@
                         <td>{{ $produto->categoria_id }}</td>
                         <td>{{ $produto->descrição }}</td>
                         <td>
-                        <a href="">
+                            <a href="admin/produtos/edit/{{($produto->id)}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
 

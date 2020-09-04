@@ -20,8 +20,10 @@ use Illuminate\Support\Facades\Auth;
 // rotas dos produtos
 Route::get('admin/produtos/create', 'ProdutoController@create')->name('create');
 Route::get('admin/produtos/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
-Route::get('/admin/produtos/show', 'ProdutoController@show')->name('show'); //mostra todos os produtos cadastrados
+Route::get('/admin/produtos/show', 'ProdutoController@index')->name('index'); //mostra todos os produtos cadastrados
 Route::get('/produtos/imagens/{imagem}', 'ProdutoController@image');
+Route::get('/admin/produtos/edit{id}', 'ProdutoController@edit')->name('edit');
+Route::get('/admin/produtos/{id}','ProdutoController@show');
 
 Route::post('/produto/store','ProdutoController@store')->name('store');//salva os produtos no banco
 Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');//salva os produtos no banco
