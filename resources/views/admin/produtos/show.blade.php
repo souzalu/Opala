@@ -59,9 +59,13 @@
                             <button class="btn btn-primary">Editar</button>
                         </a>
 
-                        <a href="">
+                        <form action="{{route('produtos_destroy',$produto->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                        <a href="destroy/{{($produto->id)}}">
                             <button class="btn btn-danger">Deletar</button>
                         </a>
+                        </form>
                         </td>
                     </tr>
                 @endforeach
@@ -69,31 +73,6 @@
         </table>
     </div>
     @endsection
-                {{-- @foreach ($produtos as $p)
-                    {{-- {{ dd($p->imagemProdutos[0]->caminhoDaImagem) }}
-                    <th scope="row">{{ $p->id }}</th>
-                    <td>
-
-                        @if (isset($p->imagemProdutos[0]->caminhoDaImagem))
-                            <img src="{{ asset($p->imagemProdutos[0]->caminhoDaImagem) }}" alt="">
-
-                            @else
-                            <img src="{{ $p->caminhoDaImagem }}" alt="">
-
-                        @endif --}}
-
-
-
-
-                        {{--
-                @endforeach --}}
-
-
-
-
-
-
-
 
 
 

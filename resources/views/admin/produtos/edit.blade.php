@@ -14,28 +14,28 @@
             <div class="form-row text-center">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="nome">Nome do Produto </label>
-                    <input type="text" name="nome" class="form-control" id="nome" value="" required>
+                    <input type="text" name="nome" class="form-control" id="nome" value="{{ $produto->nome }}" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-3">
                     <label for="valor">Valor do produto</label>
-                    <input type="float" name="valor" class="form-control" id="valor" value="" required>
+                    <input type="float" name="valor" class="form-control" id="valor" value="{{ $produto->valor }}" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-0">
                     <label for="estoque">Estoque disponível</label>
-                    <input type="text" name="estoque" class="form-control" id="estoque" value="" required>
+                    <input type="text" name="estoque" class="form-control" id="estoque" value="{{ $produto->estoque }}" required>
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-3">
                     <label for="categoria_id">Categoria</label>
-                    <select class="form-control" id="categoria_id" name="categoria_id">
+                    <select class="form-control" id="categoria_id" name="categoria_id" >
                         <option>Selecione</option>
-                        {{-- @foreach ($categorias as $c)
+                        @foreach ($categorias as $c)
 
                             <option value="{{ $c->id }}">{{ $c->nome }}</option>
 
-                        @endforeach --}}
+                        @endforeach
                     </select>
                 </div>
 
@@ -56,7 +56,7 @@
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="descrição">Descrição</label>
                     <textarea class="form-control" name="descrição" id="descrição" rows="3"
-                        value=""></textarea>
+                        value="{{ $produto->descrição }}"></textarea>
                 </div>
             </div>
 

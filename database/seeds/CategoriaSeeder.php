@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class CategoriaSeeder extends Seeder
 {
@@ -10,32 +11,15 @@ class CategoriaSeeder extends Seeder
      * @return void
      */
     public function run()
-{
+    {
+        $categorias = ['Anéis', 'Brincos', 'Colares', 'Pulseiras'];
 
-
-            DB::table('categorias')->insert([
-                'nome' => 'Anéis'
-
-            ]);
-
-
-            DB::table('categorias')->insert([
-                'nome' => 'Brincos'
+        foreach ($categorias as $categoria)
+        {
+            factory(App\Categoria::class)->create([
+                'nome' => $categoria,
 
             ]);
-
-
-            DB::table('categorias')->insert([
-                'nome' => 'Colares'
-
-            ]);
-
-            DB::table('categorias')->insert([
-                'nome' => 'Pulseiras'
-
-            ]);
+        }
+    }
 }
-
-}
-
-

@@ -84,16 +84,30 @@ class ProdutoController extends Controller
     public function show($id)
     {
         $produto = Produto::find($id);
-        return view('admin.produtos.show', compact('produto'));
+        return ($produto);
+        // return view('/admin/produtos', compact('produto'));
     }
 
     public function edit($id)
     {
+        $categorias = Categoria::all();
         $produto = Produto::find($id);
 
-        return view('admin.produtos.edit', compact('produto'));
+        return view('admin.produtos.edit', compact('produto', 'categorias'));
+    }
+
+
+    public function destroy($id)
+    {
+        $categorias = Categoria::all();
+        if(!$produto = Produto::find($id));
+        //  return redirect()->back();
+
+         $produto->delete();
+
+
+         return redirect()->route('index');
+
+        // dd("deletando o produto $id");
     }
 }
-
-
-// }
