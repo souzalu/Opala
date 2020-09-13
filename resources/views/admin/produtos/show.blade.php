@@ -4,6 +4,12 @@
 
     <div class="container">
 
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
         <h1 class="text-center mt-5 mb-5">Lista de Produtos</h1>
 
         <div class="row">
@@ -68,9 +74,12 @@
                         </form>
                         </td>
                     </tr>
+
+
                 @endforeach
             </tbody>
         </table>
+        {{ $produtos->links() }}
     </div>
     @endsection
 

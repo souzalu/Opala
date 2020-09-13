@@ -14,9 +14,10 @@ use Faker\Generator as Faker;
                     'descrição' =>  $faker->sentence,
                     'valor' =>  rand(100, 1000),
                     'estoque' =>  rand(10,100),
-                    'categoria_id' => factory(App\Categoria::class),
+                    'categoria_id' => rand(1, 4),
                     'url_img'=> null,
 
             ];
 
 });
+// factory(App\Categoria::class),

@@ -6,13 +6,21 @@
 ✔ Migration @done(20-08-29 18:48)
 ✔ Relacionamento @done(20-08-29 18:48)
 ✔ Seeds @done(20-08-29 18:48)
-☐ CRUD produtos - produtos subindo para o banco falta imagem
-    ✔ create @done(20-08-29 18:50)
-    ☐ edit
-    ☐ delite
-☐ CRUD Usuário
 ✔ Laravel ui - instalado @done(20-08-29 19:22)
 ✔ Pacote Auth @done(20-08-30 11:58)
-☐
-☐
+
+
+☐ CRUD produtos
+    ✔ create @done(20-08-29 18:50)
+    ☐ edit  categoria não vem selecionada//e tamanho somente para anel
+        verificar confguração de preço só funciona com . e puxar categoria.
+    ✔ delete @done(20-09-12 15:35)//falta colocar mensagem de confirmação
+
+
+☐ CRUD Usuário
+
+
+
+
+
 

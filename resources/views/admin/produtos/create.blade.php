@@ -14,7 +14,7 @@
             <div class="form-row text-center">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="nome">Nome do Produto </label>
-                    <input type="text" name="nome" class="form-control" id="nome" value="" required>
+                    <input type="text" name="nome" class="form-control" id="nome" value="" >
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-3">

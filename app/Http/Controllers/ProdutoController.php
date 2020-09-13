@@ -53,7 +53,7 @@ class ProdutoController extends Controller
     //mostra todos os produtos
     public function index()
     {
-        return view('admin.produtos.show')->with('produtos', Produto::all());
+        return view('admin.produtos.show')->with('produtos', Produto::paginate(5));
     }
 
     public function createCategorias()
@@ -67,7 +67,7 @@ class ProdutoController extends Controller
         $categorias->nome = request('categoria');
         $categorias->save();
 
-        dd($categorias);
+        dd($categorias); //incluir return
     }
 
     public function produto()
@@ -96,18 +96,38 @@ class ProdutoController extends Controller
         return view('admin.produtos.edit', compact('produto', 'categorias'));
     }
 
+    public function update($id,Request $request)
+    {
+        $produto = Produto::find($id);
+        // $produto->update($request->all());
+        $produto->nome=request('nome');
+        $produto->valor=request('valor');
+        $produto->descrição=request('descrição');
+        $produto->estoque=request('estoque');
+        $produto->categria_id=request('categoria_id');
+
+        $produto->valor=str_replace('R$','',$produto->valor);
+        $produto->valor=str_replace(',','.',$produto->valor);
+
+        $produto->valor=floatval($produto->valor);
+        $produto->save();
+
+
+        return redirect()->route('index')->with('success',' Alterado com sucesso');
+
+         }
+
+
 
     public function destroy($id)
     {
         $categorias = Categoria::all();
-        if(!$produto = Produto::find($id));
+        if (!$produto = Produto::find($id));
         //  return redirect()->back();
 
-         $produto->delete();
+        $produto->delete();
+        return redirect()->route('index'); //->with(['message'=> 'Deletado com Sucesso!!'])
 
 
-         return redirect()->route('index');
-
-        // dd("deletando o produto $id");
     }
 }

@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Pedido_Produto::class, function (Faker $faker) {
     return [
-        //
+
     ];
 });

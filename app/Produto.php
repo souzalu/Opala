@@ -11,7 +11,7 @@ class Produto extends Model
     protected $fillable = ['nome', 'valor', 'descrição', 'estoque','categoria_id','url_img'];
 
 
-    //formando valor para Real
+    // //formando valor para Real
     public function getValorAttribute($valor)
     {
             return 'R$' . number_format($valor, 2,',','.');

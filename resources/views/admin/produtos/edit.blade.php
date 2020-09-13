@@ -6,11 +6,11 @@
 
     <div class="container mt-5 mb-5">
         <h1 class="text-center mb-4">Cadastrar Produtos</h1>
-        <form method="PUT" action="/produtos/edit" enctype="multipart/form-data">
+        <form method="POST" action="/admin/produtos/edit/{{($produto->id)}}" enctype="multipart/form-data">
             {{-- @crsf  --}}
             @method('put')
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            {{$produto}}
+
             <div class="form-row text-center">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="nome">Nome do Produto </label>
@@ -19,7 +19,12 @@
 
                 <div class="form-group col-md-3 offset-sm-3">
                     <label for="valor">Valor do produto</label>
+
                     <input type="float" name="valor" class="form-control" id="valor" value="{{ $produto->valor }}" required>
+                    {{-- <script defer>
+                     let valorReal = document.getElementById('valor').value.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
+                    //  document.getElementById('valor').innerHTML = valorReal
+                    </script> --}}
                 </div>
 
                 <div class="form-group col-md-3 offset-sm-0">
@@ -33,7 +38,9 @@
                         <option>Selecione</option>
                         @foreach ($categorias as $c)
 
-                            <option value="{{ $c->id }}">{{ $c->nome }}</option>
+                            <option value="{{ $c->id }}" {{ $c->id == old('categoria_id', $produto->categoria_id) ? 'selected' : '' }}>{{ $c->nome }}
+
+                            </option>
 
                         @endforeach
                     </select>
@@ -55,8 +62,7 @@
 
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="descrição">Descrição</label>
-                    <textarea class="form-control" name="descrição" id="descrição" rows="3"
-                        value="{{ $produto->descrição }}"></textarea>
+                    <textarea class="form-control" name="descrição" id="descrição" rows="3">{{ $produto->descrição }}</textarea>
                 </div>
             </div>
 
@@ -69,7 +75,7 @@
 
             <div class="form-row justify-content-center">
                 <div class="col-md-4 mt-2">
-                    <button class="btn btn-dark btn-lg btn-block" href="{{ route('create') }}" type="submit">Cadastrar Produto</button>
+                    <button class="btn btn-dark btn-lg btn-block"  type="submit">Alterar Produto</button>
                 </div>
             </div>
 

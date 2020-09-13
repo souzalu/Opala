@@ -30,7 +30,7 @@ Route::delete('/admin/produtos/{id}', 'ProdutoController@destroy')->name('produt
 
 Route::post('/produto/store','ProdutoController@store')->name('store');//salva os produtos no banco
 Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');//salva os produtos no banco
-
+Route::put('/admin/produtos/edit/{id}', 'ProdutoController@update');
 
 
 
