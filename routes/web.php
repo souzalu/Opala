@@ -11,13 +11,16 @@ use Illuminate\Support\Facades\Auth;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-    Route::get('/', function () {
-        return view('welcome');
-    });
+Route::get('/', function () {
+    return view('welcome');
+});
 |
 */
+Auth::routes();
 
-// rotas dos produtos
+Route::get('/home', 'HomeController@index')->name('home');//home do user logado
+
+// rotas Admin dos produtos
 Route::get('admin/produtos/create', 'ProdutoController@create')->name('create');
 Route::get('admin/produtos/createCategorias', 'ProdutoController@createCategorias')->name('categorias');
 Route::get('/admin/produtos/show', 'ProdutoController@index')->name('index'); //mostra todos os produtos cadastrados
@@ -25,27 +28,23 @@ Route::get('/storage/Cimagem/{imagem}', 'ProdutoController@image');
 Route::get('/admin/produtos/edit/{id}', 'ProdutoController@edit')->name('edit');
 Route::get('/admin/produtos/{id}','ProdutoController@show');
 Route::delete('/admin/produtos/{id}', 'ProdutoController@destroy')->name('produtos_destroy');
-
-
-
 Route::post('/produto/store','ProdutoController@store')->name('store');//salva os produtos no banco
 Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');//salva os produtos no banco
 Route::put('/admin/produtos/edit/{id}', 'ProdutoController@update');
 
-
-
 //rotas do site
-Route::get('/site', 'HomeController@home')->name('site');
-Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
-Route::get('/login', 'UserController@login')->name('login');
+Route::get('/site', 'HomeController@home')->name('site');//pagina home do site
+//Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
+//Route::get('/login', 'UserController@login')->name('login');
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
 Route::get('/produto', 'ProdutoController@produto')->name('produto');
 Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');
 
+// rotas tipo de usuário
+
+Route::resource('users', 'UsersController');//cria todas as rotas para o controller users
+Route::resource('roles', 'RolesController');//cria todas as rotas para o controller roles
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
