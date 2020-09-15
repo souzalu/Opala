@@ -37,7 +37,7 @@
                     aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
-                        <img src="https://img.icons8.com/ios/20/000000/search--v1.png"/>
+                        <img src="https://img.icons8.com/ios/20/000000/search--v1.png" />
                     </button>
                 </div>
             </div>
@@ -48,7 +48,7 @@
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <img src="https://img.icons8.com/ultraviolet/25/000000/user-shield.png"/>
+                    <img src="https://img.icons8.com/ultraviolet/25/000000/user-shield.png" />
                     @auth
                         {{ Auth::user()->name }}
                         {{ Auth::user()->roles->isNotEmpty() ? Auth::user()->roles->first()->name : '' }}
@@ -68,21 +68,23 @@
 
         <ul class="sidebar navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/posts">
-                    <img src="https://img.icons8.com/offices/20/000000/silver-ring.png"/>
-                    <span>Opala</span></a>
+                <a class="nav-link" href="/users">
+                    <img src="https://img.icons8.com/ultraviolet/22/000000/user-female.png" />
+                    <span>Usuário</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/roles">
-                    <img src="https://img.icons8.com/ultraviolet/22/000000/user-male-circle.png"/>
+                    <img src="https://img.icons8.com/ultraviolet/22/000000/user-male-circle.png" />
                     <span>Perfil</span></a>
             </li>
 
+
+
             <li class="nav-item">
-                <a class="nav-link" href="/users">
-                    <img src="https://img.icons8.com/ultraviolet/22/000000/user-female.png"/>
-                    <span>Usuário</span></a>
+                <a class="nav-link" href="{{ route('site') }}">
+                    <img src="https://img.icons8.com/offices/20/000000/silver-ring.png" />
+                    <span>Opala</span></a>
             </li>
         </ul>
 
@@ -93,7 +95,7 @@
                 @yield('content')
 
             </div>
-            <!-- /.container-fluid -->
+
 
             <!-- Sticky Footer -->
             <footer class="sticky-footer">
@@ -105,30 +107,30 @@
             </footer>
 
         </div>
-        <!-- /.content-wrapper -->
+
 
     </div>
-    <!-- /#wrapper -->
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Sair</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Para Sair selecione Logout</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 
                     <a class="btn btn-primary" href="#" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -145,28 +147,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Page level plugin JavaScript-->
-
-    <script src="/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="/js/admin/sb-admin.js"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="/js/admin/demo/datatables-demo.js"></script>
-
-
-    @yield('js_post_page')
-    @yield('js_user_page')
-    @yield('js_role_page')
 </body>
 
 </html>

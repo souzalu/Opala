@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Create new Role</h1>
+<h1>Criar Novo Perfil</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger" role="alert">
@@ -18,7 +18,7 @@
     {{ csrf_field() }}
 
     <div class="form-group">
-        <label for="role_name">Role name</label>
+        <label for="role_name">Nome do Perfil</label>
         <input type="text" name="role_name" class="form-control" id="role_name" placeholder="Role name..." value="{{ old('role_name') }}" required>
     </div>
     <div class="form-group">
@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="/css/admin/bootstrap-tagsinput.css">
 @endsection
 
-@section('js_role_page')
+{{-- @section('js_role_page')
     <script src="/js/admin/bootstrap-tagsinput.js"></script>
 
     <script>
@@ -54,7 +54,7 @@
 
     </script>
 
-@endsection
+@endsection --}}
 @endsection
 
 

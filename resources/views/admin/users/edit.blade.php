@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>Edit User</h2>
+<h2>Editar Usuário</h2>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -15,37 +15,37 @@
 @endif
 
 <form method="POST" action="/users/{{ $user->id }}" enctype="multipart/form-data">
-    @method('PATCH')
+    @method('PUT')
     @csrf()
 
     <div class="form-group">
-        <label for="name">User name</label>
-        <input type="text" name="name" class="form-control" id="name" placeholder="Name..." value="{{ $user->name }}" required>
+        <label for="name">Nome de Usuário</label>
+        <input type="text" name="name" class="form-control" id="name" placeholder="Nome..." value="{{ $user->name }}" required>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" name="email" class="form-control" id="email" placeholder="Email..." value="{{ $user->email }}">
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password..." minlength="8">
+        <label for="password">Senha</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Senha..." minlength="8">
     </div>
     <div class="form-group">
-        <label for="password_confirmation">Password Confirm</label>
-        <input type="password" name="password_confirmation" class="form-control" placeholder="Password..." id="password_confirmation">
+        <label for="password_confirmation">Confirmar Senha</label>
+        <input type="password" name="password_confirmation" class="form-control" placeholder="Senha..." id="password_confirmation">
     </div>
 
     <div class="form-group">
-        <label for="role">Select Role</label>
+        <label for="role">Selecionar Perfil</label>
         <select class="role form-control" name="role" id="role">
-            <option value="">Select Role...</option>
+            <option value="">Selecionar Perfil...</option>
             @foreach ($roles as $role)
                 <option data-role-id="{{$role->id}}" data-role-slug="{{$role->slug}}" value="{{$role->id}}" {{ $user->roles->isEmpty() || $role->name != $userRole->name ? "" : "selected"}}>{{$role->name}}</option>
             @endforeach
         </select>
     </div>
 
-    <div id="permissions_box" >
+    {{-- <div id="permissions_box" >
         <label for="roles">Select Permissions</label>
         <div id="permissions_ckeckbox_list">
         </div>
@@ -65,15 +65,15 @@
                 </div>
             </div>
         @endif
-    @endif
-
-
+    @endif --}}
     <div class="form-group pt-2">
         <input class="btn btn-primary" type="submit" value="Submit">
     </div>
 </form>
 
-@section('js_user_page')
+
+
+{{-- @section('js_user_page')
 
     <script>
         $(document).ready(function(){
@@ -115,6 +115,6 @@
         });
     </script>
 
-@endsection
+@endsection --}}
 
 @endsection

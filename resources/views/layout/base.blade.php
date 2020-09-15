@@ -41,7 +41,7 @@
             </div>
 
             <div class="col text-right align-self-center">
-                <a href="{{route('site')}}">
+                <a href="{{route('login')}}">
                     <img src="https://img.icons8.com/windows/32/000000/user.png" />
                 </a>
                 <a href="{{route('pagamento')}}">

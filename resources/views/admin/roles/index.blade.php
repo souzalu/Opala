@@ -1,39 +1,41 @@
+<div class="container">
+
 @extends('admin.users.dashboard')
 
 @section('content')
 <div class="row py-lg-2">
     <div class="col-md-6">
-        <h2>This is Role List</h2>
+
     </div>
     <div class="col-md-6">
-        <a href="/roles/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Create New Role</a>
+        <a href="/roles/create" class="btn btn-primary btn-lg float-md-right" role="button" aria-pressed="true">Criar Perfil</a>
     </div>
 </div>
 
-<!-- DataTables Example -->
+
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fas fa-table"></i>
-        Data Table Example</div>
+        <i class="fas fa-table"></i><h2>Lista de Perfil</h2>
+        </div>
     <div class="card-body">
         <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Role</th>
+                <th>Perfil</th>
                 <th>Slug</th>
-                <th>Permissions</th>
-                <th>Tools</th>
+                <th>Permissão</th>
+                <th>Ação</th>
             </tr>
             </thead>
             <tfoot>
             <tr>
                 <th>Id</th>
-                <th>Role</th>
+                <th>Perfil</th>
                 <th>Slug</th>
-                <th>Permissions</th>
-                <th>Tools</th>
+                <th>Permissão</th>
+                <th>Ação</th>
             </tr>
             </tfoot>
             <tbody>
@@ -43,20 +45,12 @@
                         <td>{{ $role['name'] }}</td>
                         <td>{{ $role['slug'] }}</td>
                         <td>
-                            @if ($role->permissions != null)
 
-                                @foreach ($role->permissions as $permission)
-                                <span class="badge badge-secondary">
-                                    {{ $permission->name }}
-                                </span>
-                                @endforeach
-
-                            @endif
                         </td>
                         <td>
-                            <a href="/roles/{{ $role['id'] }}"><i class="fa fa-eye"></i></a>
-                            <a href="/roles/{{ $role['id'] }}/edit"><i class="fa fa-edit"></i></a>
-                            <a href="#" data-toggle="modal" data-target="#deleteModal" data-roleid="{{$role['id']}}"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/roles/{{ $role['id'] }}"><img src="https://img.icons8.com/ultraviolet/20/000000/visible.png"/></a>
+                            <a href="/roles/{{ $role['id'] }}/edit"><img src="https://img.icons8.com/color/20/000000/edit-file.png"/></i></a>
+                            <a href="#" data-toggle="modal" data-target="#deleteModal" data-roleid="{{$role['id']}}"><img src="https://img.icons8.com/ultraviolet/20/000000/delete.png"/></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -107,3 +101,4 @@
 
 
 @endsection
+</div>

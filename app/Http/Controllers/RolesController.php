@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Role;
-use App\Permission;
 use Illuminate\Http\Request;
+use App\User;
+
+
 
 class RolesController extends Controller
 {
@@ -32,13 +34,13 @@ class RolesController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param  \App\Role  $role
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //validate the role fields
+        //Validação
         $request->validate([
             'role_name' => 'required|max:255',
             'role_slug' => 'required|max:255'
@@ -50,16 +52,7 @@ class RolesController extends Controller
         $role->slug = $request->role_slug;
         $role-> save();
 
-        $listOfPermissions = explode(',', $request->roles_permissions);//create array from separated/coma permissions
 
-        foreach ($listOfPermissions as $permission) {
-            $permissions = new Permission();
-            $permissions->name = $permission;
-            $permissions->slug = strtolower(str_replace(" ", "-", $permission));
-            $permissions->save();
-            $role->permissions()->attach($permissions->id);
-            $role->save();
-        }
 
         return redirect('/roles');
 
@@ -96,7 +89,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //validate the role fields
+        //validação
         $request->validate([
             'role_name' => 'required|max:255',
             'role_slug' => 'required|max:255'
@@ -105,20 +98,6 @@ class RolesController extends Controller
         $role->name = $request->role_name;
         $role->slug = $request->role_slug;
         $role->save();
-
-        $role->permissions()->delete();
-        $role->permissions()->detach();
-
-        $listOfPermissions = explode(',', $request->roles_permissions);//create array from separated/coma permissions
-
-        foreach ($listOfPermissions as $permission) {
-            $permissions = new Permission();
-            $permissions->name = $permission;
-            $permissions->slug = strtolower(str_replace(" ", "-", $permission));
-            $permissions->save();
-            $role->permissions()->attach($permissions->id);
-            $role->save();
-        }
 
         return redirect('/roles');
     }
@@ -131,10 +110,8 @@ class RolesController extends Controller
      */
     public function destroy(Role $role)
     {
-        $role->permissions()->delete();
-        $role->delete();
-        $role->permissions()->detach();
 
+        $role->delete();
 
         return redirect('/roles');
     }

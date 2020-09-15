@@ -24,15 +24,15 @@ class UsersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param \App\Role $roles
      * @return \Illuminate\Http\Response
+     *
      */
-    public function create(Request $request)
+    public function create(Request $request, Role $roles)
     {
-        if($request->ajax()){
+        if ($request->ajax()) {
             $roles = Role::where('id', $request->role_id)->first();
-            $permissions = $roles->permissions;
 
-            return $permissions;
         }
 
         $roles = Role::all();
@@ -48,7 +48,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //validate the fields
+        //validação
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|unique:users|email|max:255',
@@ -62,16 +62,9 @@ class UsersController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        if($request->role != null){
+        if ($request->role != null) {
             $user->roles()->attach($request->role);
             $user->save();
-        }
-
-        if($request->permissions != null){
-            foreach ($request->permissions as $permission) {
-                $user->permissions()->attach($permission);
-                $user->save();
-            }
         }
 
         return redirect('/users');
@@ -85,35 +78,30 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.users.show', ['user'=>$user]);
+        return view('admin.users.show', ['user' => $user]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\User  $user
+     * @param   \App\Role $roles
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(User $user , Role $roles)
     {
         $roles = Role::get();
         $userRole = $user->roles->first();
-        if($userRole != null){
-            $rolePermissions = $userRole->allRolePermissions;
-        }else{
-            $rolePermissions = null;
-        }
-        $userPermissions = $user->permissions;
 
-        // dd($rolePermission);
+
+        // dd();
 
         return view('admin.users.edit', [
-            'user'=>$user,
-            'roles'=>$roles,
-            'userRole'=>$userRole,
-            'rolePermissions'=>$rolePermissions,
-            'userPermissions'=>$userPermissions
-            ]);
+            'user' => $user,
+            'roles' => $roles,
+            'userRole' => $userRole,
+
+        ]);
     }
 
     /**
@@ -126,7 +114,7 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
 
-        //validate the fields
+        //validação
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
@@ -135,28 +123,14 @@ class UsersController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        if($request->password != null){
+        if ($request->password != null) {
             $user->password = Hash::make($request->password);
         }
         $user->save();
 
-        $user->roles()->detach();
-        $user->permissions()->detach();
 
-        if($request->role != null){
-            $user->roles()->attach($request->role);
-            $user->save();
-        }
-
-        if($request->permissions != null){
-            foreach ($request->permissions as $permission) {
-                $user->permissions()->attach($permission);
-                $user->save();
-            }
-        }
 
         return redirect('/users');
-
     }
 
     /**
@@ -168,7 +142,7 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->roles()->detach();
-        $user->permissions()->detach();
+
         $user->delete();
 
         return redirect('/users');
