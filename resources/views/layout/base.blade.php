@@ -34,20 +34,52 @@
                 </a>
             </div>
             <div class="col text-center">
-                <a href="{{route('site')}}">
+                <a href="{{ route('home') }}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" />
                 </a>
                 <div class="login">Opala Acessórios</div>
             </div>
 
-            <div class="col text-right align-self-center">
-                <a href="{{route('site')}}">
-                    <img src="https://img.icons8.com/windows/32/000000/user.png" />
-                </a>
-                <a href="{{route('pagamento')}}">
-                    <img src="https://img.icons8.com/windows/32/000000/shopping-cart.png" />
-                </a>
+            <div class="nav ">
+                <ul class="nav  align-self-center">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item text-center ">
+                            <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item text-center dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Sair') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+
+                <div class="col align-self-center">
+                    <a href="{{ route('pagamento') }}">
+                        <img src="https://img.icons8.com/windows/32/000000/shopping-cart.png" />
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
     <!-- Final Header logo e icones de acesso-->
@@ -63,22 +95,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active mr-4">
-                        <a class="nav-link text-white" href="{{route('site')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="{{ route('home') }}">Home <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-4">
-                        <a class="nav-link text-white dropdown-toggle" class="@yield('activeprod')" href="{{route('produto')}}" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-white dropdown-toggle" class="@yield('activeprod')"
+                            href="{{ route('produto') }}" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             Produtos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Pulseiras</a>
-                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Brincos</a>
-                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Colares</a>
-                            <a class="dropdown-item" href="{{route('produto_detalhe')}}">Anéis</a>
+                            <a class="dropdown-item" href="{{ route('produto') }}">Pulseiras</a>
+                            <a class="dropdown-item" href="{{ route('produto') }}">Brincos</a>
+                            <a class="dropdown-item" href="{{ route('produto') }}">Colares</a>
+                            <a class="dropdown-item" href="{{ route('produto') }}">Anéis</a>
                         </div>
                     </li>
-                    <li class="nav-item mr-4" >
-                        <a class="nav-link text-white" class="@yield('activeSob')" href="#">Sobre</a>
+                    <li class="nav-item mr-4">
+                        <a class="nav-link text-white" class="@yield('activeSob')" href="{{ route('sobre') }}">Sobre</a>
                     </li>
                     <li class="nav-item mr-4">
                         <a class="nav-link text-white" class="@yield('activeCont')" href="#">Contato</a>
@@ -91,9 +125,10 @@
             </div>
         </div>
     </nav>
+    </div>
     <!-- Final Navbar menu -->
 
-    {{-- Começo do conteúdo principal  --}}
+    {{-- Começo do conteúdo principal --}}
     @yield('principal')
     {{-- Final do conteúdo principal --}}
 
@@ -180,4 +215,7 @@
 </body>
 
 </html>
-{{-- <!-- <a href="<https://api.whatsapp.com/send?phone=+5511964116559">"{{route('zap')}}"--> --}}
+{{--
+<!-- <a href="<https://api.whatsapp.com/send?phone=+5511964116559">"{{ route('zap') }}"-->
+--}}
+116559">"{{route('zap')}}"--> --}}
