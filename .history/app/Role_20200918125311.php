@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
      //Adicionando relacionamento n:n com User
-     public function users()
+     public function user()
      {
-         return $this->belongsToMany('App\User', 'roles_users');
+         return $this->belongsToMany('App\User');
 
      }
 

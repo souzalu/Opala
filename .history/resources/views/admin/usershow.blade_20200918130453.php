@@ -21,7 +21,7 @@
                         <th scope="row">{{ $user->id }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->role_id}}</td>
+                        <td>{{ $user->role}}</td>
                     </tr>
                 @endforeach
             </tbody>

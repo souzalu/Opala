@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function show(){
 
-        $users = User::paginate(8);
+        $users = User::paginate(5);
         $roles = Role::all();
         return view ('/admin/usershow', compact('users'));
     }

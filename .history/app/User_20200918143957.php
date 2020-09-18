@@ -41,20 +41,20 @@ class User extends Authenticatable
     public function pedidos()
     {
         return $this->hasmany('App\Pedido');
+
     }
 
-    //Adicionando relacionamento n:n com Role
-    public function roles()
-    {
-        return $this->belongsToMany('App\Role', 'roles_users');
-    }
+     //Adicionando relacionamento n:n com Role
+     public function roles()
+     {
+         return $this->belongsToMany('App\Role', 'roles_users');
 
-    public function hasRole($role)
-    {
-        if ($this->roles()->where('name' . $role)->first()){
-            return true;
-        }else{
-            return false;
-        }
-    }
+     }
+
+     public function hasRole($role)
+
+     if ($this->roles()->where('name'. $role)->first()){
+
+     };
+
 }

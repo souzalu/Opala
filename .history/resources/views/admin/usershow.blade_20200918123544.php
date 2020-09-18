@@ -16,17 +16,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $user)
-                    <tr>
-                        <th scope="row">{{ $user->id }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->role_id}}</td>
-                    </tr>
+                @foreach($users as $user)
+                <tr>
+                    <th scope="row">{{$user->id}}</th>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->roles}}</td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 
+    </div>
+    </div>
 
+    </div>
 @endsection

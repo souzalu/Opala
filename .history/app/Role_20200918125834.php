@@ -9,7 +9,7 @@ class Role extends Model
      //Adicionando relacionamento n:n com User
      public function users()
      {
-         return $this->belongsToMany('App\User', 'roles_users');
+         return $this->belongsToMany('App\User');
 
      }
 
