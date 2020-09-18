@@ -25,6 +25,9 @@ Route::get('/storage/Cimagem/{imagem}', 'ProdutoController@image');
 Route::get('/admin/produtos/edit/{id}', 'ProdutoController@edit')->name('edit');
 Route::get('/admin/produtos/{id}','ProdutoController@show');
 Route::delete('/admin/produtos/{id}', 'ProdutoController@destroy')->name('produtos_destroy');
+
+
+
 Route::post('/produto/store','ProdutoController@store')->name('store');//salva os produtos no banco
 Route::post('/createCategorias','ProdutoController@storeCategorias')->name('storeCategorias');//salva os produtos no banco
 Route::put('/admin/produtos/edit/{id}', 'ProdutoController@update');
@@ -34,7 +37,7 @@ Route::put('/admin/produtos/edit/{id}', 'ProdutoController@update');
 //rotas do site
 Route::get('/site', 'HomeController@home')->name('site');
 Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
-//Route::get('/login', 'UserController@login')->name('login');
+Route::get('/login', 'UserController@login')->name('login');
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
 Route::get('/produto', 'ProdutoController@produto')->name('produto');
 Route::get('/produtodetalhe', 'ProdutoController@produto')->name('produto_detalhe');

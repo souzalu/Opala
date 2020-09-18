@@ -218,4 +218,4 @@
 {{--
 <!-- <a href="<https://api.whatsapp.com/send?phone=+5511964116559">"{{ route('zap') }}"-->
 --}}
-
+116559">"{{route('zap')}}"--> --}}

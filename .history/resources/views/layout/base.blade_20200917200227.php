@@ -112,7 +112,7 @@
                         </div>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-white" class="@yield('activeSob')" href="#">Sobre</a>
+                        <a class="nav-link text-white" class="@yield('activeSob')" href="{{ route('sobre') }}">Sobre</a>
                     </li>
                     <li class="nav-item mr-4">
                         <a class="nav-link text-white" class="@yield('activeCont')" href="#">Contato</a>
@@ -218,4 +218,4 @@
 {{--
 <!-- <a href="<https://api.whatsapp.com/send?phone=+5511964116559">"{{ route('zap') }}"-->
 --}}
-
+116559">"{{route('zap')}}"--> --}}

@@ -36,18 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    //Adicionando relacionamento :n com pedido
-    public function pedidos()
-    {
-        return $this->hasmany('App\Pedido');
-
-    }
-
-     //Adicionando relacionamento n:n com Role
-     public function role()
-     {
-         return $this->belongsToMany('App\Role');
-
-     }
-
 }

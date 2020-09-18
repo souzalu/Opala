@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name'=>'admin',
             'email'=>'admin@admin.com',
-            'password'=>bcrypt('123456'),
+            'password'=>Hash::make('password'),
         ]);
         $users = factory(App\User::class, 20)->create();
     }
