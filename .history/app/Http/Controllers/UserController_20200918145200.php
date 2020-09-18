@@ -17,10 +17,7 @@ class UserController extends Controller
 
     public function empresa(){
 
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
-        // return view ('/admin/index');
+        return view ('/admin/index');
     }
 
     public function show(){

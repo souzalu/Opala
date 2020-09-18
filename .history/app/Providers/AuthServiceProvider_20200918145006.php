@@ -25,7 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //só pode entrar na view empresa(admin) se for um adm.
         Gate::define('empresa-view', function($user){
             return $user->hasRole('admin');
         });
