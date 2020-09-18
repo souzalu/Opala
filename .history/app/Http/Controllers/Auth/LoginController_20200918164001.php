@@ -6,9 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use App\Role;
-use App\User;
-use Illuminate\Http\Request;
+
+
 class LoginController extends Controller
 {
     /*
@@ -31,20 +30,12 @@ class LoginController extends Controller
      */
     public function redirectTo()
     {
-        $user=User::find(Auth::user()->id);
-        if($user->hasRole('admin')){
-           return '/admin/index';
+        if(Auth::user()->hasRole('admin')){
+           RouteServiceProvider::ADMIN;
         }else{
-            return '/home';
+            RouteServiceProvider::HOME;
         }
     }
-
-    public function loggedOut(Request $request)
-    {
-        return redirect('/home');
-    }
-
-
 
     /**
      * Create a new controller instance.

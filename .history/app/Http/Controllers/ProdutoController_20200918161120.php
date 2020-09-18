@@ -90,8 +90,7 @@ class ProdutoController extends Controller
 
     public function produto()
     {
-        $produtos = Produto::all();
-        return view('produto', compact('produtos'));
+        return view('produto');
     }
 
     public function produtodetalhe()
@@ -149,9 +148,6 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {
-        if (Gate::denies('empresa-view')) {
-            return redirect('/home');
-        };
         $categorias = Categoria::all();
         if (!$produto = Produto::find($id));
         //  return redirect()->back();

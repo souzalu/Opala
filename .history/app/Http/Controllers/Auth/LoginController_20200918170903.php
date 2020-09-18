@@ -39,10 +39,7 @@ class LoginController extends Controller
         }
     }
 
-    public function loggedOut(Request $request)
-    {
-        return redirect('/home');
-    }
+    public function logout()
 
 
 

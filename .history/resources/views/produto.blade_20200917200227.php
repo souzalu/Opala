@@ -40,10 +40,6 @@
 
         <div class="container">
             <div class="row mb-md-5 mb-4 mx-n2">
-
-                @foreach($produtos as $produto)
-
-
                 <div class="col-md-3 col-6 produtos mb-4 px-2">
                     <img class="btn btn-default" title="Favorito" src="https://img.icons8.com/ios/15/000000/like.png">
                     <div class="produtos text-center mb-3">
@@ -52,11 +48,11 @@
                         </a>
                         <div class="titulo">
                             <h5>
-                                <a href="#" class="text-dark">{{$produto->nome}}</a>
+                                <a href="#" class="text-dark">Anel Dourado Feminino</a>
                             </h5>
                             <div class="lista-preço">
                                 <h6>
-                                    <a href="#" class="text-dark">{{$produto->valor}}</a>
+                                    <a href="#" class="text-dark">R$ 3,00</a>
                                 </h6>
                                 <img class="btn btn-default" title="Aumenta itens"
                                     src="https://img.icons8.com/ios/15/000000/plus.png">
@@ -68,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+
                 <div class="col-md-3 col-6 produtos mb-4 px-2">
                     <img class="btn btn-default" title="Favorito" src="https://img.icons8.com/ios/15/000000/like.png">
                     <div class="produtos text-center mb-3">

@@ -52,11 +52,11 @@
                         </a>
                         <div class="titulo">
                             <h5>
-                                <a href="#" class="text-dark">{{$produto->nome}}</a>
+                                <a href="#" class="text-dark">Anel Dourado Feminino</a>
                             </h5>
                             <div class="lista-preço">
                                 <h6>
-                                    <a href="#" class="text-dark">{{$produto->valor}}</a>
+                                    <a href="#" class="text-dark">{{$produtos->valor}}</a>
                                 </h6>
                                 <img class="btn btn-default" title="Aumenta itens"
                                     src="https://img.icons8.com/ios/15/000000/plus.png">

@@ -17,7 +17,7 @@ class Produto extends Model
             return 'R$' . number_format($valor, 2,',','.');
     }
 
-   // mutator está tirando o nome da pasta do arquivo - limpeza
+    mutator está tirando o nome da pasta do arquivo - limpeza
     public function getUrl_imgAttribute($valor)
     {
             $explode = explode('/', $valor);

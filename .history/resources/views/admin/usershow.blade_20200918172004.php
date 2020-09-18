@@ -21,7 +21,7 @@
                         <th scope="row">{{ $user->id }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{implode(',', $user->roles()->pluck('name')->toArray())}}</td>
+                        <td>{{($user->roles()->get()('name'))}}</td>
                     </tr>
                 @endforeach
             </tbody>

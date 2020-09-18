@@ -52,7 +52,7 @@
                         </a>
                         <div class="titulo">
                             <h5>
-                                <a href="#" class="text-dark">{{$produto->nome}}</a>
+                                <a href="#" class="text-dark">Anel Dourado Feminino</a>
                             </h5>
                             <div class="lista-preço">
                                 <h6>

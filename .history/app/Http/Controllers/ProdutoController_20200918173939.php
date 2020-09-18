@@ -90,8 +90,8 @@ class ProdutoController extends Controller
 
     public function produto()
     {
-        $produtos = Produto::all();
-        return view('produto', compact('produtos'));
+        $produto = Produto::all();
+        return view('produto');
     }
 
     public function produtodetalhe()

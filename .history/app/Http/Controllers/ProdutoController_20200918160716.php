@@ -90,8 +90,7 @@ class ProdutoController extends Controller
 
     public function produto()
     {
-        $produtos = Produto::all();
-        return view('produto', compact('produtos'));
+        return view('produto');
     }
 
     public function produtodetalhe()
@@ -132,13 +131,13 @@ class ProdutoController extends Controller
         $produto->valor = request('valor');
         $produto->descrição = request('descrição');
         $produto->estoque = request('estoque');
-        $produto->categoria_id = request('categoria_id');
+        $produto->categria_id = request('categoria_id');
 
-        // $produto->valor = str_replace('R$', '', $produto->valor);
-        // $produto->valor = str_replace(',', '.', $produto->valor);
+        $produto->valor = str_replace('R$', '', $produto->valor);
+        $produto->valor = str_replace(',', '.', $produto->valor);
 
-        // $produto->valor = floatval($produto->valor);
-        // dd($produto->valor);
+        $produto->valor = floatval($produto->valor);
+        dd($produto->valor);
         $produto->save();
 
 
@@ -149,9 +148,6 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {
-        if (Gate::denies('empresa-view')) {
-            return redirect('/home');
-        };
         $categorias = Categoria::all();
         if (!$produto = Produto::find($id));
         //  return redirect()->back();

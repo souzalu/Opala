@@ -21,12 +21,11 @@
                         <th scope="row">{{ $user->id }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{implode(',', $user->roles()->pluck('name')->toArray())}}</td>
+                        <td>{{ implode($user->roles()->get()->pluck('name'), ',')}}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        {{$users->links()}}
     </div>
 
 
