@@ -70,17 +70,11 @@ class ProdutoController extends Controller
 
     public function createCategorias()
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         return view('admin.produtos.createCategorias');
     }
 
     public function storeCategorias()
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $categorias = new Categoria;
         $categorias->nome = request('categoria');
         $categorias->save();
@@ -101,9 +95,6 @@ class ProdutoController extends Controller
     // mostra produto em detalhe
     public function show($id)
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $produto = Produto::find($id);
         return ($produto);
         // return view('/admin/produtos', compact('produto'));
@@ -111,9 +102,6 @@ class ProdutoController extends Controller
 
     public function edit($id)
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $categorias = Categoria::all();
         $produto = Produto::find($id);
 
@@ -122,9 +110,6 @@ class ProdutoController extends Controller
 
     public function update($id,Request $request)
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $produto = Produto::find($id);
         // $produto->update($request->all());
         $produto->nome=request('nome');

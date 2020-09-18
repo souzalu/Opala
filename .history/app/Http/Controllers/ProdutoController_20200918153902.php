@@ -111,9 +111,6 @@ class ProdutoController extends Controller
 
     public function edit($id)
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $categorias = Categoria::all();
         $produto = Produto::find($id);
 
@@ -122,9 +119,6 @@ class ProdutoController extends Controller
 
     public function update($id,Request $request)
     {
-        if(Gate::denies('empresa-view')){
-            return redirect('/home');
-        };
         $produto = Produto::find($id);
         // $produto->update($request->all());
         $produto->nome=request('nome');
