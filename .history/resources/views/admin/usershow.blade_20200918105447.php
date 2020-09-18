@@ -5,14 +5,14 @@
 
 <div class="container">
 
-    <h3 class="text-center mb-5">Lista de Usuários</h3>
+    <h3>Lista de Usuários</h3>
             <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Perfil</th>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
                   </tr>
                 </thead>
                 <tbody>

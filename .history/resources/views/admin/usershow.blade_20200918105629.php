@@ -5,7 +5,7 @@
 
 <div class="container">
 
-    <h3 class="text-center mb-5">Lista de Usuários</h3>
+    <h3 class="mb=3">Lista de Usuários</h3>
             <table class="table table-hover">
                 <thead>
                   <tr>

@@ -53,6 +53,9 @@
                 </div>
             </li>
         @endguest
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('empresa') }}">{{ __('Admin') }}</a>
+        </li>
     </ul>
   </nav>
 {{-- Começo do conteúdo principal --}}

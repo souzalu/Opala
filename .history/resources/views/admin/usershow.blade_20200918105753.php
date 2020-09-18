@@ -6,7 +6,7 @@
 <div class="container">
 
     <h3 class="text-center mb-5">Lista de Usuários</h3>
-            <table class="table table-hover">
+            <table class="table table-hover mb-5">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>

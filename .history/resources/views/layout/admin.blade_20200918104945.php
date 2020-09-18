@@ -31,7 +31,7 @@
             </li>
             @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrar-se') }}</a>
+                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                 </li>
             @endif
         @else
@@ -53,6 +53,9 @@
                 </div>
             </li>
         @endguest
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('empresa') }}">{{ __('Admin') }}</a>
+        </li>
     </ul>
   </nav>
 {{-- Começo do conteúdo principal --}}
