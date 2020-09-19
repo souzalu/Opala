@@ -24,15 +24,23 @@
     <!-- Header logo e icones de acesso-->
     <div class="container-fluid">
         <div class="row justify-content-between mt-3">
+            <div class="col align-self-center">
 
-            <div class="col ">
+                <a href="#">
+                    <img src="https://img.icons8.com/office/25/000000/whatsapp.png" />
+                </a>
+                <a href="#">
+                    <img src="https://img.icons8.com/fluent/25/000000/facebook-new.png" />
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-6 ">
                 <a href="{{ route('home') }}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" class="rounded float-left" />
                 </a>
                 <div class="login mb-4 mt-2">Opala Acessórios</div>
             </div>
 
-            <div class="nav  ">
+            <div class="nav col-md-6 col-lg-3">
                 <ul class="nav align-self-center">
                     <!-- Authentication Links -->
                     @guest

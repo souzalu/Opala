@@ -24,16 +24,24 @@
     <!-- Header logo e icones de acesso-->
     <div class="container-fluid">
         <div class="row justify-content-between mt-3">
+            <div class="col align-self-center">
 
+                <a href="#">
+                    <img src="https://img.icons8.com/office/25/000000/whatsapp.png" />
+                </a>
+                <a href="#">
+                    <img src="https://img.icons8.com/fluent/25/000000/facebook-new.png" />
+                </a>
+            </div>
             <div class="col ">
                 <a href="{{ route('home') }}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" class="rounded float-left" />
                 </a>
-                <div class="login mb-4 mt-2">Opala Acessórios</div>
+                <div class="login mb-4">Opala Acessórios</div>
             </div>
 
-            <div class="nav  ">
-                <ul class="nav align-self-center">
+            <div class="nav ">
+                <ul class="nav  align-self-center">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item text-center ">
@@ -41,7 +49,7 @@
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Registrar-se') }}</a>
+                                <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                             </li>
                         @endif
                     @else

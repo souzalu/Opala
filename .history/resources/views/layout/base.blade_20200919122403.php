@@ -25,14 +25,14 @@
     <div class="container-fluid">
         <div class="row justify-content-between mt-3">
 
-            <div class="col ">
+            <div class="col-sm-4 col-md-6 col-lg-4 ">
                 <a href="{{ route('home') }}">
                     <img src="https://img.icons8.com/windows/50/000000/silver-ring.png" class="rounded float-left" />
                 </a>
                 <div class="login mb-4 mt-2">Opala Acessórios</div>
             </div>
 
-            <div class="nav  ">
+            <div class="nav col-md-6 col-lg-3">
                 <ul class="nav align-self-center">
                     <!-- Authentication Links -->
                     @guest

@@ -12,7 +12,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url('./img/slide04.png')}}" alt="Primeiro Slide">
+                    <img class="d-block w-100" src="{{url('./img/slide01.png')}}" alt="Primeiro Slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{{url('./img/slide2.png')}}" alt="Segundo Slide">
@@ -108,7 +108,7 @@
                                     <h6 class="text-center">Pulseira Couro Masculina</h6>
                                 </a>
                             </div>
-                            <div class="col-3"><a href="{{ route('produto') }}" class="text-dark"><img class="d-block w-100"
+                            <div class="col-3"><a href="#" class="text-dark"><img class="d-block w-100"
                                         src="{{url('./img/pulseira1.jpg')}}" alt="First slide">
                                     <h6 class="text-center">Pulseira Feminina Dourada</h6>
                                 </a>
@@ -117,22 +117,22 @@
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-3"><a href="{{ route('produto') }}" class="text-dark"><img class="d-block w-100"
+                            <div class="col-3"><a href="#" class="text-dark"><img class="d-block w-100"
                                         src="{{url('./img/colar11.jpg')}}" alt="First slide">
                                     <h6 class="text-center">Colar Feminino Dourado</h6>
                                 </a>
                             </div>
-                            <div class="col-3"><a href="{{ route('produto') }}" class="text-dark"><img class="d-block w-100" src="{{url('./img/colar2.jpg')}}"
+                            <div class="col-3"><a href="#" class="text-dark"><img class="d-block w-100" src="{{url('./img/colar2.jpg')}}"
                                         alt="First slide">
                                     <h6 class="text-center">Colar Masculino Dourado</h6>
                                 </a>
                             </div>
-                            <div class="col-3"><a href="{{ route('produto') }}" class="text-dark"><img class="d-block w-100" src="{{url('./img/anel3.jpg')}}"
+                            <div class="col-3"><a href="#" class="text-dark"><img class="d-block w-100" src="{{url('./img/anel3.jpg')}}"
                                         alt="First slide">
                                     <h6 class="text-center">Anel Masculino Prateado</h6>
                                 </a>
                             </div>
-                            <div class="col-3"><a href="{{ route('produto') }}" class="text-dark"><img class="d-block w-100" src="{{url('./img/anel2.jpg')}}"
+                            <div class="col-3"><a href="#" class="text-dark"><img class="d-block w-100" src="{{url('./img/anel2.jpg')}}"
                                         alt="First slide">
                                     <h6 class="text-center">Anel Feminino Dourado</h6>
                                 </a>

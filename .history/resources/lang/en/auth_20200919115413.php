@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Email não cadastrado, criar uma conta.',
+    'failed' => 'Essas credenciais não correspondem aos nossos registros.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

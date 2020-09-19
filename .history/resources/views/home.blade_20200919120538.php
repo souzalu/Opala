@@ -12,7 +12,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url('./img/slide04.png')}}" alt="Primeiro Slide">
+                    <img class="d-block w-100" src="{{url('./img/slide01.png')}}" alt="Primeiro Slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{{url('./img/slide2.png')}}" alt="Segundo Slide">
