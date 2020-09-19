@@ -40,17 +40,25 @@
 
         <div class="container">
             <div class="row mb-md-5 mb-4 mx-n2">
+
                 @foreach ($produtos as $produto)
-                  <div class="col-md-3 col-6 produtos mb-4 px-2">
+
+
+                    <div class="col-md-3 col-6 produtos mb-4 px-2">
+                        <img class="btn btn-default" title="Favorito" src="https://img.icons8.com/ios/15/000000/like.png">
                         <div class="produtos text-center mb-3">
                             <a href="#" class="produto-img d-block">
-                                <img class=" mb-2" src="{{ url("storage/{$produto->url_img}") }}"
-                                    alt="{{ $produto->nome }}" style="max-width:200px;">
+                                <img class="img-fluid  mb-2" src="{{ url("storage/{$produto->url_img}") }}"
+                                    alt="{{ $produto->nome }}" style="max-width:100px;">
                             </a>
                             <div class="titulo">
-                                <h6><a href="#" class="text-dark">{{ $produto->nome }}</a></h6>
+                                <h5>
+                                    <a href="#" class="text-dark">{{ $produto->nome }}</a>
+                                </h5>
                                 <div class="lista-preço">
-                                    <h6><a href="#" class="text-dark">{{ $produto->valor }}</a></h6>
+                                    <h6>
+                                        <a href="#" class="text-dark">{{ $produto->valor }}</a>
+                                    </h6>
                                     <img class="btn btn-default" title="Aumenta itens"
                                         src="https://img.icons8.com/ios/15/000000/plus.png">
                                     <img class="btn btn-default" title=""
@@ -63,7 +71,7 @@
                     </div>
                 @endforeach
 
-            </div>
+
                 <nav aria-label="Navegação de página exemplo">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
@@ -77,7 +85,7 @@
                         </li>
                     </ul>
                 </nav>
-
+            </div>
         </div>
 
     @endsection

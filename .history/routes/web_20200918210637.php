@@ -38,7 +38,7 @@ Route::get('/admin/usershow', 'UserController@show')->name('usershow');
 Route::get('/cadastro', 'UserController@cadastro')->name('cadastro');
 Route::get('/pagamento', 'CarrinhoController@pagamento')->name('pagamento');
 Route::get('/produto', 'ProdutoController@produto')->name('produto');
-Route::get('/produtodetalhe', 'ProdutoController@produtodetalhe')->name('produto_detalhe');
+Route::get('/produtodetalhe', 'ProdutoController@detalhe')->name('produto_detalhe');
 
 
 

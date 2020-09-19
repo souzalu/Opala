@@ -4,10 +4,10 @@
 
     <div class="container">
         @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
         <h1 class="text-center mt-5 mb-5">Lista de Produtos</h1>
         <div class="row">
             <div class="col-md-4 mr-auto ml-auto mt-5 mb-5 ">
@@ -39,10 +39,9 @@
             <tbody>
                 @foreach ($produtos as $produto)
                     <tr>
-                        <th scope="row">{{ $produto->id }}</th>
+                        <th scope="row">{{$produto->id}}</th>
                         <td>
-                            <img src="{{ url("storage/{$produto->url_img}") }}" alt="{{ $produto->nome }}"
-                                style="max-width:100px;">
+                            <img src="{{url("storage/{$produto->url_img}")}}" alt="{{$produto->nome}}" style="max-width:100px;">
                         </td>
                         <td>{{ $produto->nome }}</td>
                         <td>{{ $produto->valor }}</td>
@@ -50,16 +49,16 @@
                         <td>{{ $produto->categoria_id }}</td>
                         <td>{{ $produto->descrição }}</td>
                         <td>
-                            <a href="edit/{{ $produto->id }}">
-                                <button class="btn btn-primary">Editar</button>
-                            </a>
-                            <form action="{{ route('produtos_destroy', $produto->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <a href="destroy/{{ $produto->id }}">
-                                    <button class="btn btn-danger">Deletar</button>
-                                </a>
-                            </form>
+                            <a href="edit/{{($produto->id)}}">
+                            <button class="btn btn-primary">Editar</button>
+                        </a>
+                        <form action="{{route('produtos_destroy',$produto->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                        <a href="destroy/{{($produto->id)}}">
+                            <button class="btn btn-danger">Deletar</button>
+                        </a>
+                        </form>
                         </td>
                     </tr>
                 @endforeach
@@ -67,4 +66,22 @@
         </table>
         {{ $produtos->links() }}
     </div>
-@endsection
+    @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

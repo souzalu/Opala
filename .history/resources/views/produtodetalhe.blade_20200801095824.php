@@ -20,12 +20,12 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <div class="d-md-none text-center">
-                    <h2 class="titulo mb-0">Pulseira Dourada Feminina </h2>
+                    <h2 class="titulo mb-0">Pulseira Prateada Feminina </h2>
                     <span id="lista-preço">R$ 7,00</span>
                 </div>
                 <div class="produto-img">
                     <div class="produto-img owl-carousel product-slider">
-                        <img src="{{url('./img/pulseira.jpg')}}" alt="pulseira prateada feminina " class="img-fluid" />
+                        <img src="{{url('./img/pulseira2.jpg')}}" alt="pulseira prateada feminina " class="img-fluid" />
                     </div>
                 </div>
             </div>

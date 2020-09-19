@@ -25,7 +25,7 @@
                 </div>
                 <div class="produto-img">
                     <div class="produto-img owl-carousel product-slider">
-                        <img src="{{url('./img/pulseira.jpg')}}" alt="pulseira prateada feminina " class="img-fluid" />
+                        <img src="{{url('./img/pulseira2.jpg')}}" alt="pulseira prateada feminina " class="img-fluid" />
                     </div>
                 </div>
             </div>

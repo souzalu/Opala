@@ -5,7 +5,7 @@
 
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="card-deck">
             <div class="card mt-5 mb-5">
                 <a href="{{ route('index') }}" class="produto-img d-block text-center mt-5">

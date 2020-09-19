@@ -40,12 +40,15 @@
 
         <div class="container">
             <div class="row mb-md-5 mb-4 mx-n2">
+
                 @foreach ($produtos as $produto)
-                  <div class="col-md-3 col-6 produtos mb-4 px-2">
+
+
+                    <div class="col-md-3 col-6 produtos mb-4 px-2">
                         <div class="produtos text-center mb-3">
                             <a href="#" class="produto-img d-block">
                                 <img class=" mb-2" src="{{ url("storage/{$produto->url_img}") }}"
-                                    alt="{{ $produto->nome }}" style="max-width:200px;">
+                                    alt="{{ $produto->nome }}" style="max-width:100px;">
                             </a>
                             <div class="titulo">
                                 <h6><a href="#" class="text-dark">{{ $produto->nome }}</a></h6>
